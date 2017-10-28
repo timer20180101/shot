@@ -4,12 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title></title>
+    <style type="text/css">
+    html, body{
+    	margin: 0;
+    	padding: 0;
+    }
+    .content{
+    	font-size: 0;
+    }
+    .poster{
+    	width: 0.966rem;
+    	height: 1.2rem;
+    	margin: 0.05rem;
+    	background-size: cover;
+    	background-position: center;
+    	display: inline-block;
+    }
+    </style>
 </head>
 <body>
 
 <div class="content">
-    ok
+	<div class="poster" style="background-image: url(img/a1.jpg)"></div>
+	<div class="poster" style="background-image: url(img/a2.jpg)"></div>
+	<div class="poster" style="background-image: url(img/a3.jpg)"></div>
+	<div class="poster" style="background-image: url(img/a4.jpg)"></div>
+	<div class="poster" style="background-image: url(img/a5.jpg)"></div>
 </div>
 
+<script type="text/javascript">
+(function (doc, win) {
+    var docEl = doc.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        if (!clientWidth) return;
+        docEl.style.fontSize = 100 * (clientWidth / 320) + 'px';
+    };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
 </body>
 </html>
